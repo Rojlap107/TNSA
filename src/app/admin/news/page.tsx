@@ -1,50 +1,68 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 interface NewsItem {
   id: string;
   title: string;
   image: string;
-  date?: string;
   author?: string;
+  date?: string;
   content?: string[];
 }
 
 export default function AdminNewsPage() {
+  const router = useRouter();
+
+  // Auth
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [authChecked, setAuthChecked] = useState(false);
+
+  // Data
   const [items, setItems] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // form state
-  const [id, setId] = useState("");
+  // Form
+  const [editingId, setEditingId] = useState<string | null>(null);
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [author, setAuthor] = useState("");
   const [date, setDate] = useState("");
   const [content, setContent] = useState("");
-  const [editingId, setEditingId] = useState<string | null>(null);
 
   const resetForm = () => {
-    setId("");
+    setEditingId(null);
     setTitle("");
     setImage("");
     setAuthor("");
     setDate("");
     setContent("");
-    setEditingId(null);
   };
 
+  // Authentication
+  useEffect(() => {
+    const isLogged = localStorage.getItem("isAdminLoggedIn") === "true";
+
+    if (!isLogged) {
+      router.push("/admin/login");
+    } else {
+      setIsAuthenticated(true);
+    }
+    setAuthChecked(true);
+  }, [router]);
+
+  // Fetch News
   const fetchItems = async () => {
-    setLoading(true);
-    setError(null);
     try {
-      const res = await fetch("/api/news", { cache: "no-store" });
-      if (!res.ok) throw new Error("Failed to load");
-      const data = (await res.json()) as NewsItem[];
+      setLoading(true);
+      const res = await fetch("/api/news");
+      const data = await res.json();
       setItems(data);
-    } catch (e: any) {
-      setError(e.message || "Error");
+    } catch {
+      setError("Failed to fetch news items.");
     } finally {
       setLoading(false);
     }
@@ -54,23 +72,23 @@ export default function AdminNewsPage() {
     fetchItems();
   }, []);
 
+  // Save News
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSaving(true);
     setError(null);
+
     const payload: Partial<NewsItem> = {
-      id: editingId ? undefined : id.trim(),
+      id: editingId ? undefined : crypto.randomUUID(),
       title: title.trim(),
       image: image.trim(),
       author: author.trim() || undefined,
       date: date.trim() || undefined,
-      content: content
-        .split("\n")
-        .map((p) => p.trim())
-        .filter(Boolean),
+      content: content.split("\n").map(p => p.trim()).filter(Boolean),
     };
 
     try {
-      let res: Response;
+      let res;
       if (editingId) {
         res = await fetch(`/api/news/${editingId}`, {
           method: "PUT",
@@ -78,172 +96,203 @@ export default function AdminNewsPage() {
           body: JSON.stringify(payload),
         });
       } else {
-        if (!payload.id) throw new Error("id is required");
         res = await fetch("/api/news", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
         });
       }
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || "Request failed");
-      }
-      await fetchItems();
+
+      if (!res.ok) throw new Error("Failed to save news.");
+
       resetForm();
-    } catch (e: any) {
-      setError(e.message || "Error");
+      fetchItems();
+    } catch {
+      setError("Unable to save news. Try again.");
+    } finally {
+      setSaving(false);
     }
   };
 
-  const onEdit = (n: NewsItem) => {
-    setEditingId(n.id);
-    setId(n.id);
-    setTitle(n.title);
-    setImage(n.image);
-    setAuthor(n.author || "");
-    setDate(n.date || "");
-    setContent((n.content || []).join("\n\n"));
+  // Fill form when editing
+  const handleEdit = (item: NewsItem) => {
+    setEditingId(item.id);
+    setTitle(item.title);
+    setImage(item.image);
+    setAuthor(item.author || "");
+    setDate(item.date || "");
+    setContent((item.content || []).join("\n"));
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const onDelete = async (id: string) => {
-    if (!confirm("Delete this news item?")) return;
-    try {
-      const res = await fetch(`/api/news/${id}`, { method: "DELETE" });
-      if (!res.ok) throw new Error("Delete failed");
-      await fetchItems();
-    } catch (e: any) {
-      setError(e.message || "Error");
-    }
-  };
-
-  const sorted = useMemo(
-    () => [...items].sort((a, b) => (b.date || "").localeCompare(a.date || "")),
-    [items]
-  );
+  // UI Loading states
+  if (!authChecked) return <p style={{ padding: 20 }}>Checking authentication...</p>;
+  if (!isAuthenticated) return <p style={{ padding: 20 }}>Redirecting...</p>;
 
   return (
-    <main>
-      <section className="about-hero">
-        <div className="container">
-          <h1>Admin: News</h1>
-          <p>Add, edit, and delete news items.</p>
-        </div>
-      </section>
-      <section>
-        <div className="container" style={{ padding: "20px 0 60px" }}>
-          <div className="about-section">
-            <h2>{editingId ? "Edit News" : "Add News"}</h2>
-            {error ? (
-              <p style={{ color: "#b00020", marginBottom: 12 }}>{error}</p>
-            ) : null}
-            <form onSubmit={onSubmit} style={{ display: "grid", gap: 12 }}>
-              {!editingId && (
-                <label>
-                  <div>ID (slug)</div>
-                  <input
-                    value={id}
-                    onChange={(e) => setId(e.target.value)}
-                    placeholder="e.g. new-tournament-2025"
-                    required
-                  />
-                </label>
-              )}
-              <label>
-                <div>Title</div>
-                <input
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                  required
-                />
-              </label>
-              <label>
-                <div>Image path (in /public)</div>
-                <input
-                  value={image}
-                  onChange={(e) => setImage(e.target.value)}
-                  placeholder="/your-image.jpg"
-                  required
-                />
-              </label>
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: 12,
-                }}
-              >
-                <label>
-                  <div>Author</div>
-                  <input
-                    value={author}
-                    onChange={(e) => setAuthor(e.target.value)}
-                  />
-                </label>
-                <label>
-                  <div>Date (YYYY-MM-DD)</div>
-                  <input
-                    value={date}
-                    onChange={(e) => setDate(e.target.value)}
-                    placeholder="2025-02-10"
-                  />
-                </label>
-              </div>
-              <label>
-                <div>Content (paragraphs, separate by blank lines)</div>
-                <textarea
-                  value={content}
-                  onChange={(e) => setContent(e.target.value)}
-                  rows={6}
-                />
-              </label>
-              <div style={{ display: "flex", gap: 10 }}>
-                <button className="project-btn" type="submit">
-                  {editingId ? "Save Changes" : "Add News"}
-                </button>
-                {editingId ? (
-                  <button type="button" className="cta-btn" onClick={resetForm}>
-                    Cancel
-                  </button>
-                ) : null}
-              </div>
-            </form>
+    <div
+      style={{
+        maxWidth: 900,
+        margin: "40px auto",
+        padding: "20px",
+        fontFamily: "Arial, sans-serif",
+      }}
+    >
+      <h1 style={{ marginBottom: 20 }}>Admin News Panel</h1>
+
+      {/* Logout */}
+      <button
+        onClick={() => {
+          localStorage.removeItem("isAdminLoggedIn");
+          router.push("/admin/login");
+        }}
+        style={{
+          padding: "10px 20px",
+          backgroundColor: "#e63946",
+          border: "none",
+          borderRadius: 6,
+          color: "#fff",
+          cursor: "pointer",
+          marginBottom: 30,
+        }}
+      >
+        Logout
+      </button>
+
+      {/* Form Card */}
+      <div
+        style={{
+          background: "#fff",
+          padding: 20,
+          borderRadius: 10,
+          boxShadow: "0 2px 10px rgba(0,0,0,0.08)",
+          marginBottom: 40,
+        }}
+      >
+        <h2 style={{ marginBottom: 15 }}>
+          {editingId ? "Edit News Item" : "Add News Item"}
+        </h2>
+
+        <form onSubmit={onSubmit} style={{ display: "flex", flexDirection: "column", gap: 15 }}>
+          <div>
+            <label>Title</label>
+            <input
+              style={inputStyle}
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              required
+            />
           </div>
 
-          <div className="about-section">
-            <h2>Existing News</h2>
-            <div className="news-grid">
-              {sorted.map((n) => (
-                <div key={n.id} className="news-card">
-                  <img src={n.image} alt={n.title} />
-                  <div className="news-card-body">
-                    <h3>{n.title}</h3>
-                    <div className="news-meta">
-                      <span>{n.author || "TNSA"}</span>
-                      {n.date ? <span> · {n.date}</span> : null}
-                    </div>
-                    <div style={{ display: "flex", gap: 8 }}>
-                      <a href={`/news/${n.id}`} className="project-btn">
-                        View
-                      </a>
-                      <button className="cta-btn" onClick={() => onEdit(n)}>
-                        Edit
-                      </button>
-                      <button
-                        className="donate-btn"
-                        onClick={() => onDelete(n.id)}
-                      >
-                        Delete
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
+          <div>
+            <label>Image Path (public folder)</label>
+            <input
+              style={inputStyle}
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
+              placeholder="/example.jpg"
+              required
+            />
+          </div>
+
+          <div style={{ display: "flex", gap: 15 }}>
+            <div style={{ flex: 1 }}>
+              <label>Author</label>
+              <input
+                style={inputStyle}
+                value={author}
+                onChange={(e) => setAuthor(e.target.value)}
+              />
+            </div>
+            <div style={{ flex: 1 }}>
+              <label>Date (YYYY-MM-DD)</label>
+              <input
+                style={inputStyle}
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
             </div>
           </div>
-        </div>
-      </section>
-    </main>
+
+          <div>
+            <label>Content (each paragraph on a new line)</label>
+            <textarea
+              style={{ ...inputStyle, height: 120 }}
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+            />
+          </div>
+
+          {error && <p style={{ color: "red" }}>{error}</p>}
+
+          <button
+            type="submit"
+            disabled={saving}
+            style={{
+              padding: "12px 20px",
+              backgroundColor: "#1d3557",
+              border: "none",
+              color: "white",
+              borderRadius: 6,
+              cursor: "pointer",
+              fontSize: 16,
+            }}
+          >
+            {saving ? "Saving..." : editingId ? "Update News" : "Add News"}
+          </button>
+        </form>
+      </div>
+
+      {/* News List */}
+      <h2 style={{ marginBottom: 15 }}>News Items</h2>
+
+      {loading ? (
+        <p>Loading...</p>
+      ) : items.length === 0 ? (
+        <p>No news available.</p>
+      ) : (
+        items.map((item) => (
+          <div
+            key={item.id}
+            style={{
+              padding: 20,
+              background: "#fafafa",
+              borderRadius: 10,
+              marginBottom: 20,
+              border: "1px solid #eee",
+            }}
+          >
+            <h3 style={{ marginBottom: 5 }}>{item.title}</h3>
+            <p style={{ margin: "5px 0", color: "#555" }}>
+              {item.author || "Unknown"} — {item.date || "No date"}
+            </p>
+
+            <button
+              onClick={() => handleEdit(item)}
+              style={{
+                padding: "8px 15px",
+                backgroundColor: "#0077b6",
+                color: "white",
+                border: "none",
+                borderRadius: 6,
+                cursor: "pointer",
+                marginTop: 10,
+              }}
+            >
+              Edit
+            </button>
+          </div>
+        ))
+      )}
+    </div>
   );
 }
+
+// Reusable input style for cleaner UI
+const inputStyle: React.CSSProperties = {
+  width: "100%",
+  padding: "10px",
+  borderRadius: 6,
+  border: "1px solid #ccc",
+  marginTop: 5,
+};
