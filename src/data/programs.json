@@ -1,0 +1,43 @@
+[
+  {
+    "id": "fcra",
+    "title": "FCRA & Annual Reports",
+    "image": "/fcra-cover.jpg",
+    "content": [
+      "Find TNSA's FCRA compliance documents and annual reports.",
+      "These documents will be updated each year to maintain transparency."
+    ],
+    "documents": [
+      { "title": "FCRA Registration", "file": "/docs/fcra-registration.pdf" },
+      { "title": "Annual Report 2024-25", "file": "/docs/annual-report-2024-25.pdf" }
+    ]
+  },
+  {
+    "id": "mens-camp",
+    "title": "Men's Football Camp",
+    "image": "/mens-football.jpg",
+    "content": [
+      "The Men's Football Camp focuses on technical development, tactical understanding, and physical conditioning.",
+      "Players undergo intensive sessions led by experienced coaching staff."
+    ]
+  },
+  {
+    "id": "womens-camp",
+    "title": "Women's Football Camp",
+    "image": "/womens-football.jpg",
+    "content": [
+      "The Women's Football Camp nurtures talent and builds a strong pathway for women's football within the community.",
+      "The program includes coaching clinics, mentorship, and match experience."
+    ]
+  },
+  {
+    "id": "run-club",
+    "title": "TNSA Run Club",
+    "image": "/run-club.jpg",
+    "content": [
+      "The TNSA Run Club welcomes runners of all levels with weekly runs and seasonal challenges.",
+      "Join to build endurance, community, and healthy habits."
+    ]
+  }
+]
+

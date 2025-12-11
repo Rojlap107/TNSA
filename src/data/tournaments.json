@@ -1,0 +1,10 @@
+[
+  { "id": "gcmgc", "title": "GCMGC", "image": "/final-match.jpg" },
+  { "id": "tibet-cup-women", "title": "Tibet Cup for Women", "image": "/womens-football.jpg" },
+  { "id": "school-tournament", "title": "School Tournament", "image": "/mens-football.jpg" },
+  { "id": "gcm-international", "title": "GCM International", "image": "/final-match-2.jpg" },
+  { "id": "cta-ngo-basketball", "title": "CTA & NGO Basketball Tournament", "image": "/semi-final-1.jpg" },
+  { "id": "marathon", "title": "Marathon", "image": "/semi-final-2.jpg" },
+  { "id": "tibetan-football-league", "title": "Tibetan Football League", "image": "/semi-final-3.jpg" }
+]
+

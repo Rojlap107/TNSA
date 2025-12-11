@@ -1,0 +1,18 @@
+[
+  {
+    "year": 2025,
+    "goalkeepers": [
+      { "name": "Player A", "location": "Dharamsala", "image": "/players/men/2025/gk-a.jpg" }
+    ],
+    "defenders": [
+      { "name": "Player B", "location": "Bangalore", "image": "/players/men/2025/df-b.jpg" }
+    ],
+    "midfielders": [
+      { "name": "Player C", "location": "Delhi", "image": "/players/men/2025/mf-c.jpg" }
+    ],
+    "forwards": [
+      { "name": "Player D", "location": "Dehradun", "image": "/players/men/2025/fw-d.jpg" }
+    ]
+  }
+]
+

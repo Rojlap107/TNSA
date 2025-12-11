@@ -1,0 +1,5 @@
+[
+  { "id": "mens-camp", "title": "Men's Football Camp", "image": "/mens-football.jpg" },
+  { "id": "womens-camp", "title": "Women's Football Camp", "image": "/womens-football.jpg" },
+  { "id": "run-club", "title": "TNSA Run Club", "image": "/run-club.jpg" }
+]
