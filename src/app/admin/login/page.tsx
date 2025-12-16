@@ -12,9 +12,9 @@ export default function AdminLoginPage() {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Example hardcoded credentials (replace with real authentication logic)
-    const adminUsername = "admin";
-    const adminPassword = "password123";
+    // Credentials from environment variables
+    const adminUsername = process.env.NEXT_PUBLIC_ADMIN_USERNAME;
+    const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
 
     if (username === adminUsername && password === adminPassword) {
       // Save login state in localStorage
