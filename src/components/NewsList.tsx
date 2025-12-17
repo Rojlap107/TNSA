@@ -5,18 +5,21 @@ import { useMemo, useState, useEffect } from "react";
 interface NewsItem {
   id: string;
   title: string;
-  image: string;
+  image: string; // Primary image
+  images: string[]; // All images
+  imageCount: number;
   date?: string;
   author?: string;
-  content?: string[];
   excerpt?: string;
-  link?: string; // Added for external link
+  link?: string;
 }
 
 interface FBPost {
   id: string;
   date: string;
   content: string;
+  image_urls: string[];
+  image_count: number;
   link: string;
 }
 
@@ -31,15 +34,23 @@ export default function NewsList() {
         if (!res.ok) return;
         const posts = (await res.json()) as FBPost[];
 
-        const mappedItems: NewsItem[] = posts.map((p) => ({
-          id: `fb-${p.id}`,
-          title: p.content.split('. ')[0] + '...', // Use first sentence as title
-          image: "/images/fb-placeholder.png", // Using the generated thematic placeholder
-          date: p.date, // Format is "Dec 10, 2025" which is parseable
-          author: "Tibet Football Team",
-          excerpt: p.content,
-          link: p.link
-        }));
+        const mappedItems: NewsItem[] = posts.map((p) => {
+          // Use first meaningful sentence as title, or truncation
+          const firstSentence = p.content.split('\n')[0] || p.content.slice(0, 50);
+          const title = firstSentence.length > 80 ? firstSentence.slice(0, 80) + "..." : firstSentence;
+
+          return {
+            id: `fb-${p.id}`,
+            title: title || "News Update",
+            image: p.image_urls?.[0] || "/images/fb-placeholder.png",
+            images: p.image_urls || [],
+            imageCount: p.image_count,
+            date: p.date,
+            author: "Tibet Football Team",
+            excerpt: p.content,
+            link: p.link
+          };
+        });
 
         setNewsItems(mappedItems);
       } catch (e) {
@@ -49,16 +60,17 @@ export default function NewsList() {
   }, []);
 
   const formatDate = (dateStr?: string) => {
-    if (!dateStr) return "";
-    // If it's already "Dec 10, 2025", just return it or ensure consistent formatting
+    if (!dateStr || dateStr === "Unknown") return "";
     return dateStr;
   };
 
   const items = useMemo<NewsItem[]>(() => {
     const q = query.trim().toLowerCase();
-    const sorted = [...newsItems]; // Already sorted by nature of extraction? Or sort by date if needed.
-    // robust sort
-    sorted.sort((a, b) => new Date(b.date || "").getTime() - new Date(a.date || "").getTime());
+    const sorted = [...newsItems];
+    // Sort logic, defaulting to index/creation order if date is ambiguous or assume file is sorted
+    // But since our dates are often "Unknown" or rough, we rely on the scrape order (newest first usually)
+    // If we want to sort strictly:
+    // sorted.sort((a, b) => new Date(b.date || "").getTime() - new Date(a.date || "").getTime());
 
     if (!q) return sorted;
     return sorted.filter((n) => {
@@ -98,20 +110,19 @@ export default function NewsList() {
           {items.map((n) => (
             <a
               key={n.id}
-              href={n.link || `/news/${n.id}`}
-              target={n.link ? "_blank" : undefined}
-              rel={n.link ? "noopener noreferrer" : undefined}
+              href={`/news/${n.id}`}
               className="news-card"
             >
               <div
                 className="news-image-wrapper"
                 style={{
-                  height: 200,
+                  height: 250,
                   overflow: 'hidden',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   backgroundColor: '#eee',
+                  position: 'relative'
                 }}
               >
                 <img
@@ -124,18 +135,43 @@ export default function NewsList() {
                   }}
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
-                    e.currentTarget.parentElement!.style.backgroundColor = '#ccc'; // visual fallback
+                    e.currentTarget.parentElement!.style.backgroundColor = '#ccc';
                   }}
                 />
+                {n.imageCount > 1 && (
+                  <div style={{
+                    position: 'absolute',
+                    bottom: 10,
+                    right: 10,
+                    backgroundColor: 'rgba(0,0,0,0.6)',
+                    color: 'white',
+                    padding: '4px 8px',
+                    borderRadius: 4,
+                    fontSize: '0.8rem',
+                    fontWeight: 'bold'
+                  }}>
+                    +{n.imageCount - 1} Photos
+                  </div>
+                )}
               </div>
 
               <div className="news-card-body">
-                <h3>{n.title}</h3>
-                <div className="news-meta">
+                <div className="news-meta" style={{ marginBottom: '0.5rem', color: '#666', fontSize: '0.9rem' }}>
                   <span>{n.author}</span>
-                  {n.date ? <span> · {formatDate(n.date)}</span> : null}
+                  {formatDate(n.date) ? <span> · {formatDate(n.date)}</span> : null}
                 </div>
-                {n.excerpt ? <p className="news-excerpt">{n.excerpt}</p> : null}
+                <h3 style={{ marginTop: 0, marginBottom: '0.5rem' }}>{n.title}</h3>
+
+                {n.excerpt ? (
+                  <p className="news-excerpt" style={{
+                    display: '-webkit-box',
+                    WebkitLineClamp: 3,
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden'
+                  }}>
+                    {n.excerpt}
+                  </p>
+                ) : null}
               </div>
             </a>
           ))}
