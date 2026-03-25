@@ -1,0 +1,80 @@
+[
+  {
+    "id": "gcmgc",
+    "title": "Gyalyum Chenmo Memorial Gold Cup (GCMGC)",
+    "image": "/images/tournaments cover/gcmgc.jpg",
+    "content": [
+      "The Gyalyum Chenmo Memorial Gold Cup (GCMGC) is the most prestigious football tournament in the Tibetan diaspora community. Named in honor of the Great Mother (Gyalyum Chenmo), the tournament has been a cornerstone of Tibetan sports culture for over three decades, bringing together teams from settlements across India, Nepal, and beyond.",
+      "The GCMGC is organized annually by the Tibetan National Sports Association (TNSA) and typically features 16 teams divided into four groups, competing through group stages, quarter-finals, semi-finals, and a grand final over approximately 10 days of intense competition.",
+      "The historic 30th edition was held at Upper TCV grounds, where DYSA Mundgod was crowned champions after defeating TDL Bylakuppe in a thrilling final. The tournament drew large crowds, with all matches broadcast live on the TNSA YouTube channel.",
+      "Beyond the competition itself, the GCMGC serves as a unifying event for the Tibetan community. It is the primary stage for scouting talent for the Tibetan National Football Team, with standout performers shortlisted for international competitions such as the CONIFA Asia Cup.",
+      "The tournament has also become a platform for cultural initiatives, including the launch of the Tibetan Football Terms Book and new national team jerseys. TNSA continues to introduce eco-friendly practices, such as water refill stations, to promote sustainability at the event."
+    ]
+  },
+  {
+    "id": "tibet-cup-women",
+    "title": "Tibet Cup for Women (Chikdril Gold Cup)",
+    "image": "/womens-football.jpg",
+    "content": [
+      "The Tibet Cup for Women, also known as the Chikdril Gold Cup, is a premier women's football tournament organized by TNSA to promote and develop women's football within the Tibetan community. The tournament has quickly established itself as an important fixture in the Tibetan sports calendar.",
+      "The Chikdril Gold Cup features both women's and boys' categories, providing a competitive platform for female athletes from Tibetan settlements across India. Teams compete in group stages followed by knockout rounds, with matches typically held at Mundgod.",
+      "In the 2026 edition, Munsel claimed the championship title, with Longsho finishing as runners-up after a hard-fought final. The 2025 edition (2nd edition) saw Munsel win the women's crown and Red Devils take the boys' title, with best player awards presented in both categories.",
+      "The tournament represents TNSA's commitment to gender equality in sport, giving women the opportunity to showcase their talent and compete at a high level. It continues to grow each year, fostering competitive spirit and developing the pipeline of women's football in the Tibetan diaspora."
+    ]
+  },
+  {
+    "id": "school-tournament",
+    "title": "School Tournament (Tongtsen Cup)",
+    "image": "/images/tournaments cover/school-tournament.jpg",
+    "content": [
+      "The School Tournament, organized under the Tongtsen Cup banner, is an Under-15 boys and girls football tournament that represents a major milestone in TNSA's grassroots football development program. The tournament is aimed at identifying and nurturing young talent from Tibetan schools.",
+      "The inaugural Tongtsen Cup was held at Upper TCV football ground, featuring multiple days of group stage matches followed by semi-finals and finals. In the boys' category, STS Dholanji claimed the championship title with TCV Gopalpur finishing as runners-up. The girls' category saw TCV Suja emerge as champions.",
+      "All matches are broadcast live on the TNSA Dharamsala YouTube channel, giving young athletes a professional experience and wider visibility. The tournament also features educational workshops, including a Women Empowerment workshop organized for participants.",
+      "The Tongtsen Cup is part of TNSA's long-term strategy to build a pipeline of talent for Tibetan football from the grassroots level, providing school-age athletes with a competitive platform to develop their skills and sportsmanship."
+    ]
+  },
+  {
+    "id": "gcm-international",
+    "title": "GCM International",
+    "image": "/images/tournaments cover/gcm-international.jpg",
+    "content": [
+      "The GCM International is a football tournament that brings Tibetan football to the diaspora community outside India, primarily in North America. The tournament extends the spirit of the Gyalyum Chenmo Memorial Gold Cup to Tibetan communities worldwide.",
+      "The GCM International is set to return to New York in 2026, generating excitement among Tibetan football fans around the world. The tournament provides a platform for diaspora teams from the United States, Canada, and other countries to compete and celebrate Tibetan sporting culture.",
+      "By hosting the tournament internationally, TNSA strengthens the connection between Tibetan communities across the globe through sport, giving diaspora youth an opportunity to engage with their heritage and fellow Tibetans in a competitive yet communal setting.",
+      "The GCM International complements TNSA's broader efforts to expand Tibetan football beyond South Asia, including the historic first Tibetan U11 and U13 youth soccer tournament held in the United States in collaboration with Tibet FC Grassroots Soccer."
+    ]
+  },
+  {
+    "id": "cta-ngo-basketball",
+    "title": "CTA & NGO Basketball Tournament",
+    "image": "/images/tournaments cover/basketball.jpg",
+    "content": [
+      "The CTA & NGO Basketball Tournament is part of TNSA's expanding multi-sport development initiative, bringing together teams from the Central Tibetan Administration (CTA) offices and non-governmental organizations in the Dharamsala area.",
+      "The tournament promotes physical fitness, teamwork, and community bonding among Tibetan professionals and civil servants. Teams from various CTA departments and local NGOs compete in a friendly yet spirited atmosphere.",
+      "This event is closely tied to TNSA's year-round basketball programs, including the basketball camp for Tibetan youth held at the CTA basketball ground. These programs expand the association's reach beyond football into multi-sport development, fostering sportsmanship among Tibetan youth and adults alike.",
+      "The tournament reflects TNSA's belief that sport is a powerful tool for community building, employee wellness, and maintaining an active lifestyle within the Tibetan community."
+    ]
+  },
+  {
+    "id": "marathon",
+    "title": "Marathon",
+    "image": "/images/tournaments cover/marathon.jpg",
+    "content": [
+      "The TNSA Marathon is a community running event open to participants of all ages and abilities. The event is organized as part of TNSA's commitment to promoting fitness and healthy lifestyles within the Tibetan community beyond football.",
+      "The marathon features multiple distance categories, including 5K, 10K, half-marathon, and full marathon distances, allowing runners of varying fitness levels to participate. Experienced run leaders and volunteers support participants throughout the course.",
+      "The event is closely linked to the TNSA Run Club, a community-driven fitness initiative that organizes weekly group runs and seasonal challenges. The marathon serves as a culminating event where club members and community participants can test their endurance and celebrate their progress.",
+      "Beyond physical fitness, the marathon brings together the wider Tibetan community in a spirit of celebration and shared purpose. Past events have included charity run components, raising awareness and funds for community causes."
+    ]
+  },
+  {
+    "id": "tibetan-football-league",
+    "title": "Tibetan Football League",
+    "image": "/images/tournaments cover/football-league.jpg",
+    "content": [
+      "The Tibetan Football League is a structured domestic football competition aimed at providing regular, competitive match experience for Tibetan clubs and players throughout the year. Unlike knockout-style tournaments, the league format ensures consistent playing time for all participating teams.",
+      "The league strengthens the domestic football ecosystem within the Tibetan community by giving players ongoing competitive exposure between major tournaments like the GCMGC. This consistent match practice is critical for player development and maintaining fitness levels.",
+      "The Tibetan Football League also feeds into the national team selection pipeline. Players who perform well during the league season gain visibility with TNSA selectors, increasing their chances of being called up for national team camps and international competitions.",
+      "By establishing a regular league structure, TNSA aims to professionalize Tibetan football and create a competitive environment that mirrors established football systems, ultimately raising the standard of play across the diaspora."
+    ]
+  }
+]

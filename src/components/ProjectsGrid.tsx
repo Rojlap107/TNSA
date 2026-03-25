@@ -1,0 +1,21 @@
+import { getAllPrograms } from "../lib/getPrograms";
+
+export default async function ProjectsGrid() {
+  const programs = await getAllPrograms();
+
+  return (
+    <section className="projects" id="programs">
+      <div className="container">
+        <h2>Our Projects</h2>
+        <div className="projects-grid">
+          {programs.map((p) => (
+            <a className="project-card" key={p.id} href={`/programs/${p.id}`}>
+              <img src={p.image} alt={p.title} />
+              <h3>{p.title}</h3>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

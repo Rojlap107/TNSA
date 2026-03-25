@@ -1,0 +1,54 @@
+[
+  {
+    "id": "fcra",
+    "title": "FCRA & Annual Reports",
+    "image": "/fcra-cover.jpg",
+    "content": [
+      "Find TNSA's FCRA compliance documents and annual reports.",
+      "These documents will be updated each year to maintain transparency."
+    ],
+    "documents": [
+      { "title": "FCRA Registration", "file": "/docs/fcra-registration.pdf" },
+      { "title": "Annual Report 2024-25", "file": "/docs/annual-report-2024-25.pdf" }
+    ]
+  },
+  {
+    "id": "mens-camp",
+    "title": "Men's Football Camp",
+    "image": "/mens-football.jpg",
+    "content": [
+      "The Men's Football Camp is TNSA's flagship development program, designed to identify, nurture, and prepare the most talented male footballers from the Tibetan community for national and international competition. Building on the legacy of the first Tibetan National Football Team that played in Bologna, Italy in 1999, the camp continues TNSA's mission of athletic excellence and cultural pride.",
+      "The camp brings together players from Tibetan settlements across India and Nepal for an intensive residential training program. Sessions are structured around four core pillars: technical skill development, tactical awareness, physical conditioning, and mental resilience. Players train under experienced coaching staff who focus on individual growth as well as team cohesion.",
+      "Technical sessions cover ball control, passing accuracy, shooting technique, set-piece execution, and positional play. Tactical training includes match analysis, formation drills, pressing strategies, and transition play. Physical conditioning programs are tailored to each player's needs, incorporating endurance training, strength work, agility drills, and injury prevention exercises.",
+      "The camp also serves as the primary selection pathway for the Tibetan National Men's Football Team. Standout performers are shortlisted for the national squad, which represents Tibet in international tournaments and friendly matches. Past national teams have toured countries including Denmark, Germany, Switzerland, and Greenland.",
+      "Beyond football skills, the camp fosters leadership, discipline, and a deep sense of community among participants. Players form lasting bonds and carry forward the values of sportsmanship and Tibetan identity. TNSA provides all training equipment, accommodation, and meals for the duration of the camp, ensuring that financial barriers do not prevent talented players from participating."
+    ]
+  },
+  {
+    "id": "womens-camp",
+    "title": "Women's Football Camp",
+    "image": "/womens-football.jpg",
+    "content": [
+      "The Women's Football Camp is a cornerstone of TNSA's commitment to gender equality in sport. The program was created to build a strong and sustainable pathway for women's football within the Tibetan community, empowering female athletes with the skills, confidence, and opportunities to compete at the highest levels.",
+      "The camp provides a supportive and professional training environment where women from Tibetan settlements across India and Nepal come together for intensive coaching. Participants receive expert instruction in all aspects of the game, including technical fundamentals, tactical understanding, physical fitness, and match strategy.",
+      "Training sessions are designed to develop well-rounded players through focused drills on passing, dribbling, shooting, defensive positioning, and goalkeeping. Coaches emphasize both individual skill development and team play, running tactical exercises that cover formations, movement off the ball, counter-attacks, and set-piece routines.",
+      "The camp serves as the selection ground for the Tibetan National Women's Football Team. Players who demonstrate exceptional ability, dedication, and teamwork are identified for the national squad, which aims to represent Tibet in women's football tournaments and international friendlies.",
+      "In addition to on-field training, the program includes mentorship sessions, workshops on sports nutrition and injury prevention, and leadership development activities. TNSA is dedicated to creating role models within the community and inspiring the next generation of female athletes. The camp covers all costs including training gear, accommodation, and meals, removing financial barriers to participation.",
+      "By investing in women's football, TNSA is not only building a competitive team but also challenging stereotypes and creating a culture where Tibetan women are celebrated for their athletic achievements."
+    ]
+  },
+  {
+    "id": "run-club",
+    "title": "TNSA Run Club",
+    "image": "/run-club.jpg",
+    "content": [
+      "The TNSA Run Club is a community-driven fitness initiative that welcomes participants of all ages and abilities. Whether you are a seasoned marathon runner or a complete beginner looking to take your first steps, the Run Club offers a supportive and motivating environment to help you reach your goals.",
+      "The club organizes weekly group runs that cater to different fitness levels, from easy-paced social jogs to more challenging tempo and interval sessions. Experienced run leaders guide each group, offering advice on pacing, breathing technique, and running form to help members improve safely and steadily.",
+      "Throughout the year, the Run Club hosts seasonal challenges and community events, including fun runs, timed races, and charity runs that bring together the wider Tibetan community. These events promote not only physical fitness but also social connection, cultural celebration, and a shared sense of purpose.",
+      "The program is built around the belief that running is one of the most accessible forms of exercise and a powerful tool for both physical and mental well-being. Regular running improves cardiovascular health, builds endurance, reduces stress, and boosts overall energy levels. The club environment adds accountability, encouragement, and camaraderie to keep members motivated.",
+      "TNSA Run Club also provides members with training plans for those preparing for specific events such as 5K, 10K, half-marathon, or full marathon distances. The club periodically invites guest coaches and sports professionals to conduct workshops on topics like nutrition for runners, stretching and recovery, and goal setting.",
+      "Membership is free and open to all members of the Tibetan community and friends of TNSA. No special equipment is needed beyond a pair of running shoes. Join us to build endurance, forge friendships, and embrace a healthy, active lifestyle."
+    ]
+  }
+]
+

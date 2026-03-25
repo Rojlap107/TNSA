@@ -1,0 +1,18 @@
+[
+  {
+    "year": 2025,
+    "goalkeepers": [
+      { "name": "Player W1", "location": "Dharamsala", "image": "/players/women/2025/gk-1.jpg" }
+    ],
+    "defenders": [
+      { "name": "Player W2", "location": "Bangalore", "image": "/players/women/2025/df-2.jpg" }
+    ],
+    "midfielders": [
+      { "name": "Player W3", "location": "Delhi", "image": "/players/women/2025/mf-3.jpg" }
+    ],
+    "forwards": [
+      { "name": "Player W4", "location": "Dehradun", "image": "/players/women/2025/fw-4.jpg" }
+    ]
+  }
+]
+
