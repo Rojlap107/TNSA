@@ -7,28 +7,24 @@ const members = [
     name: "Karma Ngudup",
     role: "International Chapter Coordinator",
     location: "Chicago, USA",
-    image:
-      "https://tibetansports.org/wp-content/uploads/2020/09/karma-ngodupedit-300x300.jpg",
+    image: "/images/chapter-members/karma-ngudup.jpg",
     bio: "Faculty at University of Chicago; founding member of Tibetan National Football team; first manager who took the team to Italy (1998) and Denmark (2001).",
   },
   {
     name: "Karma Samdup",
     location: "England",
-    image:
-      "https://tibetansports.org/wp-content/uploads/2020/09/karmaedit-300x300.jpg",
+    image: "/images/chapter-members/karma-samdup.jpg",
   },
   {
     name: "Tenzing Ngawang",
     location: "Toronto, Canada",
-    image:
-      "https://tibetansports.org/wp-content/uploads/2022/01/Screen-Shot-2022-01-20-at-2.47.28-PM-300x290.png",
+    image: "/images/chapter-members/tenzing-ngawang.png",
     bio: "Professional truck driver; former executive member of RTYC.",
   },
   {
     name: "Karma Yeshe",
     location: "New York, USA",
-    image:
-      "https://tibetansports.org/wp-content/uploads/2022/01/Screen-Shot-2022-01-20-at-3.11.11-PM-264x300.png",
+    image: "/images/chapter-members/karma-yeshe.png",
     bio: "Coach of Team Tibet NYC; founder of Tibet FC (2021). Won 2018 North American GCM Cup and 2019 Dalai Lama Cup.",
   },
 ];
