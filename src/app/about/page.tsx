@@ -5,10 +5,19 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <div className="about-hero">
-        <div className="container">
-          <h1>About TNSA (Tibetan National Sports Association)</h1>
-        </div>
+      <div className="about-hero" style={{ position: "relative", overflow: "hidden", minHeight: 500 }}>
+        <img
+          src="/images/tnsa_about_cover.jpg"
+          alt="TNSA members with His Holiness the Dalai Lama"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            position: "absolute",
+            top: 0,
+            left: 0,
+          }}
+        />
       </div>
 
       <div className="container" style={{ padding: "20px 0 60px" }}>

@@ -1,91 +1,96 @@
+
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview
 
-This is the **TNSA (Tibetan National Sports Association) Website** — a Next.js application using the App Router. It serves as a news portal and organizational website for Tibetan diaspora sports, covering tournaments, national teams, programs, and community events.
-
-**Important:** Source page/component files (`.tsx`) are not present in `src/app/` — only the compiled `.next/` build output exists alongside the data layer. The project needs its source files restored or recreated to make further development possible.
+**TNSA (Tibetan National Sports Association) Website** — a Next.js 15 application (App Router) serving as a news portal and organizational website for Tibetan diaspora sports. Covers tournaments, national teams, programs, and community events.
 
 ## Build & Dev Commands
 
-No `package.json` is currently present in the repo. Once restored, standard Next.js commands apply:
-
 ```bash
-npm install
-npm run dev        # local development server
-npm run build      # production build
-npm run start      # serve production build
+npm install          # install dependencies
+npm run dev          # local dev server
+npm run build        # production build
+npm run start        # serve production build
 ```
 
-### Data Pipeline
+No linter or test runner is configured.
 
-The content pipeline scrapes Facebook posts and transforms them into structured news articles:
+### Data Pipeline
 
 ```bash
 python3 scripts/clean_facebook_posts.py
 ```
 
-This reads raw scraped data from `src/data/dataset_facebook-posts-scraper_*.json`, filters out Tibetan-only posts, classifies and merges related posts into article groups, downloads cover/gallery images to `public/images/news/`, and outputs `src/data/new_news.json`.
+Reads raw scraped data from `src/data/dataset_facebook-posts-scraper_*.json`, filters Tibetan-only posts, classifies/merges related posts into article groups, downloads images to `public/images/news/`, and outputs `src/data/new_news.json`. To add a new event: add a regex to `MERGE_GROUPS` and a corresponding entry to `ARTICLE_TEMPLATES`.
 
 ## Architecture
 
-### Routing (Next.js App Router)
+### Dual-Source Data Layer (JSON + Sanity CMS)
 
-Static pages: `/`, `/about`, `/contact`, `/donate`, `/membership`, `/news`, `/programs`, `/tournaments`, `/national-team`, `/national-team/men`, `/national-team/women`, `/admin/login`, `/admin/news`
+All content has two sources: **static JSON files** in `src/data/` (primary) and **Sanity CMS** (secondary). Data fetching functions in `src/lib/` merge both sources — Sanity wins on ID collision. If Sanity is unreachable, JSON data is used as fallback.
 
-Dynamic routes: `/news/[slug]`, `/programs/[slug]`, `/tournaments/[slug]`
+**Data fetching pattern** (all functions in `src/lib/`):
+1. Import static JSON via `import("../data/<file>.json")`
+2. Fetch from Sanity via GROQ query (wrapped in try/catch)
+3. Merge into a Map keyed by `id` — Sanity overwrites JSON entries
+4. Sort and return
 
-API routes:
-- `GET /api/news` — list news articles
-- `GET /api/news/[id]` — single news article
+Key fetchers: `getNews.ts`, `getTournaments.ts`, `getPrograms.ts`, `getHighlights.ts`, `getPlayers.ts`
+
+These are **server-only** — called from Server Components and API route handlers.
+
+### Data Files (`src/data/`)
+
+| File | Schema |
+|------|--------|
+| `news.json` | `{ id, title, image, date, author, content: string[], facebookUrl?, gallery?: string[] }` |
+| `tournaments.json` | `{ id, title, image, content: string[] }` |
+| `programs.json` | `{ id, title, image, content: string[], documents?: { title, file }[] }` |
+| `highlights.json` | `{ id, url }` (YouTube video URLs) |
+| `projects.json` | Featured projects for homepage grid |
+| `national-team-men.json` / `national-team-women.json` | `{ year, goalkeepers, defenders, midfielders, forwards }` where each player is `{ name, location, image }` |
+
+### Sanity CMS
+
+- **Config:** `sanity.config.ts` — project ID, dataset, `/studio` base path
+- **Client:** `src/sanity/client.ts`
+- **Schemas:** `src/sanity/schemaTypes/` — `news.ts`, `tournament.ts`, `program.ts`, `highlight.ts`, `player.ts`
+- **Studio route:** `/studio/[[...index]]`
+- **Env vars:** `SANITY_PROJECT_ID`, `SANITY_DATASET`, `SANITY_API_VERSION`, `SANITY_READ_TOKEN` (plus `NEXT_PUBLIC_` variants)
+
+Sanity content uses Portable Text for rich text fields. The `blocksToStrings()` helper in each lib file converts Portable Text blocks to plain `string[]` paragraphs.
+
+### Routing
+
+**Static pages:** `/`, `/about`, `/contact`, `/donate`, `/membership`, `/news`, `/programs`, `/tournaments`, `/national-team`, `/national-team/men`, `/national-team/women`, `/admin/login`, `/admin/news`
+
+**Dynamic routes:** `/news/[slug]`, `/programs/[slug]`, `/tournaments/[slug]`
+
+**API routes:**
+- `GET /api/news` — list all news
+- `GET|PUT|DELETE /api/news/[id]` — single news CRUD
 - `/api/cms/news` and `/api/cms/news/[slug]` — CMS endpoints
 
-Studio route: `/studio/[[...index]]` — Sanity CMS admin (may not be fully wired up)
+### Components (`src/components/`)
 
-### Data Layer
+Client components (marked `"use client"`): `HeroSlider` (auto-rotating carousel), `HighlightsGrid` (YouTube video grid with oEmbed), `NewsList` (searchable news grid), `GalleryLightbox` (image gallery viewer)
 
-Content is stored as static JSON files in `src/data/`:
-
-- **`news.json`** — Main news articles. Schema: `{ id, title, image, date, author, content: string[], facebookUrl, gallery?: string[] }`
-- **`new_news.json`** — Output of the Facebook scraper pipeline (same schema as news.json)
-- **`programs.json`** — TNSA programs. Schema: `{ id, title, image, content: string[], documents?: { title, file }[] }`
-
-Pages read from these JSON files. API routes serve them to the frontend.
-
-### Content Pipeline (`scripts/clean_facebook_posts.py`)
-
-The pipeline has three key stages:
-1. **Filtering** — Skips Tibetan-only text and minor updates (match-day posts, live stream announcements, thank-you messages) using regex-based `SKIP_KEYWORDS`
-2. **Classification & Merging** — Groups related Facebook posts into single articles using `MERGE_GROUPS` regex patterns (e.g., all "30th GCMGC" posts become one article)
-3. **Article Generation** — Maps each group to a hand-written `ARTICLE_TEMPLATES` entry with curated title, author, date, and content paragraphs. Downloads images and assigns cover + gallery.
-
-To add coverage for a new event: add a regex entry to `MERGE_GROUPS` and a corresponding template to `ARTICLE_TEMPLATES`.
+Server components: `LatestStories`, `ProjectsGrid`, `TeamRoster`
 
 ### Styling
 
 Vanilla CSS in `src/app/globals.css`. No Tailwind, no CSS modules, no CSS-in-JS.
 
-- Primary blue: `#4A90E2`
-- Accent red: `#FF6B6B`
-- Responsive breakpoints at 768px and 480px
-- Font: Roboto (loaded via Google Fonts import)
+- Primary blue: `#4A90E2`, accent red: `#FF6B6B`
+- Responsive breakpoints: 768px (tablet), 480px (mobile)
+- Font: Roboto (Google Fonts)
+- Container max-width: 1200px
 
-### Key Client Components (from build artifacts)
-
-- `HeroSlider` — Image carousel on the homepage
-- `HighlightsGrid` — Grid layout for highlight cards
-
-### Static Assets
-
-- `public/images/news/` — Article images (auto-downloaded by the scraper script)
-- `public/icons/` — Social media SVG icons (Facebook, Instagram, YouTube)
-- `public/logo.png` — TNSA logo
-
-## TypeScript Config
+### TypeScript Config
 
 - `strict: false`
+- `resolveJsonModule: true` (JSON imports enabled)
 - Target: ES2017
-- JSX: preserve (Next.js handles transform)
-- `resolveJsonModule: true` — JSON imports are enabled

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getNewsById } from "../../../lib/getNews";
+import { getNewsById, getAllNews } from "../../../lib/getNews";
 import GalleryLightbox from "../../../components/GalleryLightbox";
 
 export default async function NewsArticlePage(props: any) {
@@ -21,6 +21,9 @@ export default async function NewsArticlePage(props: any) {
   const contentBlocks: string[] = Array.isArray(item.content)
     ? item.content.filter(Boolean)
     : [];
+
+  const allNews = await getAllNews();
+  const latestOthers = allNews.filter((n) => n.id !== item.id).slice(0, 3);
 
   return (
     <main>
@@ -47,6 +50,29 @@ export default async function NewsArticlePage(props: any) {
             )}
 
           </article>
+
+          {latestOthers.length > 0 && (
+            <div className="more-news">
+              <h3>Latest News</h3>
+              <div className="news-grid">
+                {latestOthers.map((n) => (
+                  <a key={n.id} href={`/news/${n.id}`} className="news-card">
+                    <img src={n.image} alt={n.title} />
+                    <div className="news-card-body">
+                      <h3>{n.title}</h3>
+                      <p className="news-meta">
+                        {n.author || "TNSA"}
+                        {n.date ? ` · ${formatDate(n.date)}` : ""}
+                      </p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+              <div style={{ textAlign: "center", marginTop: 24 }}>
+                <a href="/news" className="cta-btn">See More News</a>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </main>

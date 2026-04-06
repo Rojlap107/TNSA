@@ -72,14 +72,29 @@ export default function RootLayout({
                   <img src="/logo.png" alt="TNSA Logo" />
                 </a>
                 <ul className="nav-menu">
-                  <li>
+                  <li className="nav-dropdown">
                     <a href="/about">ABOUT</a>
+                    <ul className="dropdown-menu">
+                      <li><a href="/about">About TNSA</a></li>
+                      <li><a href="/about/chapter-members">Chapter Members</a></li>
+                    </ul>
                   </li>
                   <li>
                     <a href="/news">NEWS</a>
                   </li>
-                  <li>
-                    <a href="/tournaments">TOURNAMENTS</a>
+                  <li className="nav-dropdown">
+                    <span className="nav-link-label">TOURNAMENTS</span>
+                    <ul className="dropdown-menu dropdown-menu-wide">
+                      <li><a href="/tournaments/gcmgc">GCMGC</a></li>
+                      <li><a href="/tournaments/tongsten-cup">Tongsten Cup</a></li>
+                      <li><a href="/tournaments/gcm-international">GCM International</a></li>
+                      <li><a href="/tournaments/chikdril">Chikdril Gold Cup</a></li>
+                      <li><a href="/tournaments/climate-cup">Climate Cup</a></li>
+                      <li><a href="/tournaments/conifa-world-cup">CONIFA (World Cup)</a></li>
+                      <li><a href="/tournaments/conifa-asian-cup">CONIFA (Asian Cup)</a></li>
+                      <li><a href="/tournaments/governors-gold-cup">Governor's Gold Cup</a></li>
+                      <li><a href="/tournaments/unity-cup">Unity Cup</a></li>
+                    </ul>
                   </li>
                   <li>
                     <a href="/programs">PROGRAMS</a>

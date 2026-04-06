@@ -1,10 +1,17 @@
 import { sanityClient } from "../sanity/client";
 
+export interface TournamentSection {
+  label: string;
+  image?: string;
+  content?: string[];
+}
+
 export interface TournamentItem {
   id: string;
   title: string;
   image: string;
   content?: string[];
+  sections?: TournamentSection[];
 }
 
 interface SanityBlock {

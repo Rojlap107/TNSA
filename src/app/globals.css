@@ -19,6 +19,18 @@ body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; }
 .nav-menu { display: flex; list-style: none; gap: 30px; }
 .nav-menu a { text-decoration: none; color: #333; font-weight: 500; font-size: 14px; transition: color 0.3s; }
 .nav-menu a:hover { color: #4A90E2; }
+.nav-dropdown { position: relative; }
+.nav-link-label { color: #333; font-weight: 500; font-size: 14px; cursor: default; transition: color 0.3s; }
+.nav-dropdown:hover .nav-link-label { color: #4A90E2; }
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; box-shadow: 0 4px 16px rgba(0,0,0,0.12); border-radius: 6px; list-style: none; min-width: 180px; padding: 8px 0; z-index: 100; }
+.dropdown-menu li a { display: block; padding: 8px 20px; font-size: 13px; white-space: nowrap; }
+.dropdown-menu li a:hover { background: #f0f4ff; }
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu-wide { min-width: 240px; }
+.tournament-section { margin-top: 40px; padding-top: 32px; border-top: 2px solid #e8e8e8; }
+.tournament-section:first-child { border-top: none; margin-top: 16px; padding-top: 0; }
+.tournament-section-label { font-size: 20px; font-weight: 700; color: #4A90E2; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+.tournament-section-cover { width: 100%; height: 360px; object-fit: cover; border-radius: 8px; margin-bottom: 20px; }
 .hero { display: flex; min-height: 500px; align-items: center; color: #fff; position: relative; overflow: hidden; background-size: cover; background-position: center; background-repeat: no-repeat; }
 .hero-content { flex: 1; padding: 60px 40px; }
 .hero-text h1 { font-size: 48px; font-weight: 700; margin-bottom: 30px; line-height: 1.2; }
@@ -103,7 +115,7 @@ body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; }
 /* Article */
 .news-article { padding: 60px 0; background: #f8f9fa; }
 .article { background: #fff; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); overflow: hidden; }
-.article-cover { width: 100%; height: 360px; object-fit: cover; }
+.article-cover { width: 100%; height: 520px; object-fit: cover; }
 .article-title { font-size: 32px; padding: 20px 24px 0; color: #333; }
 .article-meta { font-size: 13px; color: #777; padding: 0 24px 10px; }
 .article-content { padding: 0 24px 24px; }
@@ -129,3 +141,25 @@ body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; }
 .lightbox-next { right: 16px; }
 .lightbox-counter { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.8); font-size: 15px; font-weight: 500; }
 @media (max-width: 768px) { .lightbox-prev, .lightbox-next { width: 44px; height: 56px; font-size: 36px; } .lightbox-prev { left: 8px; } .lightbox-next { right: 8px; } .lightbox-close { top: 10px; right: 14px; font-size: 32px; } }
+
+/* More News at bottom of article */
+.more-news { margin-top: 48px; }
+.more-news > h3 { font-size: 24px; color: #333; margin-bottom: 24px; }
+.more-news .cta-btn { display: inline-block; text-decoration: none; }
+
+/* Chapter Members */
+.members-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
+.member-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; padding-bottom: 24px; }
+.member-card img { width: 100%; height: 260px; object-fit: cover; }
+.member-card h3 { font-size: 18px; color: #333; padding: 16px 16px 4px; }
+.member-card .member-role { font-size: 14px; color: #4A90E2; font-weight: 500; padding: 0 16px; }
+.member-card .member-location { font-size: 13px; color: #777; padding: 4px 16px 0; }
+.member-card .member-bio { font-size: 13px; color: #555; padding: 8px 16px 0; line-height: 1.5; }
+
+/* Tournament / Program section headings */
+.section-category { margin-bottom: 48px; }
+.section-category h3 { font-size: 24px; color: #333; margin-bottom: 8px; }
+.section-category .category-subtitle { font-size: 15px; color: #777; margin-bottom: 24px; }
+.subsection-label { font-size: 16px; font-weight: 600; color: #4A90E2; margin: 24px 0 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+@media (max-width: 768px) { .members-grid { grid-template-columns: 1fr; } }

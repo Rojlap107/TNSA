@@ -12,19 +12,8 @@
     ]
   },
   {
-    "id": "tibet-cup-women",
-    "title": "Tibet Cup for Women (Chikdril Gold Cup)",
-    "image": "/womens-football.jpg",
-    "content": [
-      "The Tibet Cup for Women, also known as the Chikdril Gold Cup, is a premier women's football tournament organized by TNSA to promote and develop women's football within the Tibetan community. The tournament has quickly established itself as an important fixture in the Tibetan sports calendar.",
-      "The Chikdril Gold Cup features both women's and boys' categories, providing a competitive platform for female athletes from Tibetan settlements across India. Teams compete in group stages followed by knockout rounds, with matches typically held at Mundgod.",
-      "In the 2026 edition, Munsel claimed the championship title, with Longsho finishing as runners-up after a hard-fought final. The 2025 edition (2nd edition) saw Munsel win the women's crown and Red Devils take the boys' title, with best player awards presented in both categories.",
-      "The tournament represents TNSA's commitment to gender equality in sport, giving women the opportunity to showcase their talent and compete at a high level. It continues to grow each year, fostering competitive spirit and developing the pipeline of women's football in the Tibetan diaspora."
-    ]
-  },
-  {
-    "id": "school-tournament",
-    "title": "School Tournament (Tongtsen Cup)",
+    "id": "tongsten-cup",
+    "title": "Tongsten Cup",
     "image": "/images/tournaments cover/school-tournament.jpg",
     "content": [
       "The School Tournament, organized under the Tongtsen Cup banner, is an Under-15 boys and girls football tournament that represents a major milestone in TNSA's grassroots football development program. The tournament is aimed at identifying and nurturing young talent from Tibetan schools.",
@@ -45,36 +34,109 @@
     ]
   },
   {
-    "id": "cta-ngo-basketball",
-    "title": "CTA & NGO Basketball Tournament",
-    "image": "/images/tournaments cover/basketball.jpg",
+    "id": "chikdril",
+    "title": "Chikdril Gold Cup",
+    "image": "/images/tournaments cover/women-chikdril.jpg",
     "content": [
-      "The CTA & NGO Basketball Tournament is part of TNSA's expanding multi-sport development initiative, bringing together teams from the Central Tibetan Administration (CTA) offices and non-governmental organizations in the Dharamsala area.",
-      "The tournament promotes physical fitness, teamwork, and community bonding among Tibetan professionals and civil servants. Teams from various CTA departments and local NGOs compete in a friendly yet spirited atmosphere.",
-      "This event is closely tied to TNSA's year-round basketball programs, including the basketball camp for Tibetan youth held at the CTA basketball ground. These programs expand the association's reach beyond football into multi-sport development, fostering sportsmanship among Tibetan youth and adults alike.",
-      "The tournament reflects TNSA's belief that sport is a powerful tool for community building, employee wellness, and maintaining an active lifestyle within the Tibetan community."
+      "The Chikdril Gold Cup is a premier football tournament organized by TNSA featuring both men's and women's categories, providing a competitive platform for athletes from Tibetan settlements across India."
+    ],
+    "sections": [
+      {
+        "label": "Men",
+        "image": "/images/tournaments cover/men-chikdril.jpg",
+        "content": [
+          "The Men's Chikdril Gold Cup brings together top men's football teams from Tibetan settlements for an exciting knockout-style competition.",
+          "The tournament promotes physical fitness, teamwork, and community bonding among Tibetan athletes. Teams from various settlements compete in a spirited atmosphere that showcases the best of Tibetan men's football.",
+          "The Chikdril Gold Cup is closely tied to TNSA's broader development programs, serving as a key scouting platform for identifying talented players for national team selection.",
+          "The tournament reflects TNSA's belief that sport is a powerful tool for community building and maintaining an active lifestyle within the Tibetan community."
+        ]
+      },
+      {
+        "label": "Women",
+        "image": "/images/tournaments cover/women-chikdril.jpg",
+        "content": [
+          "The Women's Chikdril Gold Cup, also known as the Tibet Cup for Women, is a premier women's football tournament organized by TNSA to promote and develop women's football within the Tibetan community.",
+          "The tournament features women's and boys' categories, providing a competitive platform for female athletes from Tibetan settlements across India. Teams compete in group stages followed by knockout rounds, with matches typically held at Mundgod.",
+          "In the 2026 edition, Munsel claimed the championship title, with Longsho finishing as runners-up after a hard-fought final. The 2025 edition (2nd edition) saw Munsel win the women's crown and Red Devils take the boys' title.",
+          "The tournament represents TNSA's commitment to gender equality in sport, giving women the opportunity to showcase their talent and compete at a high level."
+        ]
+      }
     ]
   },
   {
-    "id": "marathon",
-    "title": "Marathon",
-    "image": "/images/tournaments cover/marathon.jpg",
+    "id": "climate-cup",
+    "title": "Climate Cup",
+    "image": "/images/tournaments cover/climate-cup.jpg",
     "content": [
-      "The TNSA Marathon is a community running event open to participants of all ages and abilities. The event is organized as part of TNSA's commitment to promoting fitness and healthy lifestyles within the Tibetan community beyond football.",
-      "The marathon features multiple distance categories, including 5K, 10K, half-marathon, and full marathon distances, allowing runners of varying fitness levels to participate. Experienced run leaders and volunteers support participants throughout the course.",
-      "The event is closely linked to the TNSA Run Club, a community-driven fitness initiative that organizes weekly group runs and seasonal challenges. The marathon serves as a culminating event where club members and community participants can test their endurance and celebrate their progress.",
-      "Beyond physical fitness, the marathon brings together the wider Tibetan community in a spirit of celebration and shared purpose. Past events have included charity run components, raising awareness and funds for community causes."
+      "The Climate Cup is a football tournament that combines competitive sport with environmental awareness. The tournament brings together teams to compete while raising awareness about climate change and sustainability.",
+      "Organized with an eco-friendly approach, the Climate Cup reflects TNSA's commitment to promoting environmental consciousness through sport within the Tibetan community."
     ]
   },
   {
-    "id": "tibetan-football-league",
-    "title": "Tibetan Football League",
-    "image": "/images/tournaments cover/football-league.jpg",
+    "id": "conifa-world-cup",
+    "title": "CONIFA (World Cup)",
+    "image": "/images/tournaments cover/gcmgc.jpg",
     "content": [
-      "The Tibetan Football League is a structured domestic football competition aimed at providing regular, competitive match experience for Tibetan clubs and players throughout the year. Unlike knockout-style tournaments, the league format ensures consistent playing time for all participating teams.",
-      "The league strengthens the domestic football ecosystem within the Tibetan community by giving players ongoing competitive exposure between major tournaments like the GCMGC. This consistent match practice is critical for player development and maintaining fitness levels.",
-      "The Tibetan Football League also feeds into the national team selection pipeline. Players who perform well during the league season gain visibility with TNSA selectors, increasing their chances of being called up for national team camps and international competitions.",
-      "By establishing a regular league structure, TNSA aims to professionalize Tibetan football and create a competitive environment that mirrors established football systems, ultimately raising the standard of play across the diaspora."
+      "The CONIFA World Cup is the flagship tournament of the Confederation of Independent Football Associations, bringing together national teams from unrecognized nations, de facto states, and regions around the world."
+    ],
+    "sections": [
+      {
+        "label": "Men",
+        "content": [
+          "The Tibetan Men's National Football Team has represented Tibet at the CONIFA World Cup, competing against teams from around the globe. The tournament provides an invaluable platform for Tibetan players to gain international experience and showcase their talent on the world stage.",
+          "Participation in the CONIFA World Cup is a highlight of TNSA's international program, reinforcing the visibility of Tibetan football and the broader Tibetan cause through sport."
+        ]
+      },
+      {
+        "label": "Women",
+        "content": [
+          "The Tibetan Women's National Football Team has participated in the CONIFA World Cup, marking a significant milestone for women's football in the Tibetan community.",
+          "Competing internationally provides invaluable experience for Tibetan women footballers and inspires the next generation of female athletes in the diaspora."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "conifa-asian-cup",
+    "title": "CONIFA (Asian Cup)",
+    "image": "/images/tournaments cover/men-confica-asian-cup.jpg",
+    "content": [
+      "The CONIFA Asian Cup is the continental championship organized by the Confederation of Independent Football Associations for Asian member teams."
+    ],
+    "sections": [
+      {
+        "label": "Men",
+        "image": "/images/tournaments cover/men-confica-asian-cup.jpg",
+        "content": [
+          "The Tibetan Men's National Football Team competes in the CONIFA Asian Cup, facing teams from across the continent. The tournament serves as a crucial stepping stone for international competition and helps raise the profile of Tibetan football in Asia.",
+          "Players selected for the Asian Cup squad are drawn from standout performers at domestic tournaments like the GCMGC and the Tibetan Football League, ensuring the best talent represents Tibet on the international stage."
+        ]
+      },
+      {
+        "label": "Women",
+        "content": [
+          "The Tibetan Women's National Football Team participates in the CONIFA Asian Cup, competing against women's teams from across Asia.",
+          "The tournament provides critical international match experience for Tibetan women footballers and supports TNSA's mission of developing women's football at all levels."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "governors-gold-cup",
+    "title": "Governor's Gold Cup",
+    "image": "",
+    "content": [
+      "The Governor's Gold Cup is a prestigious football tournament held in Sikkim, India. The Tibetan National Football Team has participated in this tournament, competing against local and regional teams.",
+      "Participation in the Governor's Gold Cup provides the Tibetan team with competitive match experience against Indian football clubs and state-level teams, helping to raise the standard of Tibetan football."
+    ]
+  },
+  {
+    "id": "unity-cup",
+    "title": "Unity Cup",
+    "image": "",
+    "content": [
+      "The Unity Cup is a women's football tournament that brings together diverse teams in a celebration of sport and solidarity. The Tibetan Women's National Football Team has participated in this tournament, gaining valuable international experience.",
+      "The tournament embodies the spirit of unity through sport, providing Tibetan women footballers with a platform to compete, connect, and represent their community on the international stage."
     ]
   }
 ]
