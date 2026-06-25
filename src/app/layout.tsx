@@ -71,6 +71,12 @@ export default function RootLayout({
                 <a href="/" className="logo">
                   <img src="/logo.png" alt="TNSA Logo" />
                 </a>
+                <input type="checkbox" id="nav-toggle" className="nav-toggle-input" />
+                <label htmlFor="nav-toggle" className="nav-toggle-label" aria-label="Toggle navigation">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </label>
                 <ul className="nav-menu">
                   <li className="nav-dropdown">
                     <a href="/about">ABOUT</a>
