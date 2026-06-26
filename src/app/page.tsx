@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import HeroSlider from "../components/HeroSlider";
 import LatestStories from "../components/LatestStories";
 import ProjectsGrid from "../components/ProjectsGrid";
