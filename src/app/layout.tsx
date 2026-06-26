@@ -53,7 +53,7 @@ export default function RootLayout({
                     <img src="/icons/instagram.svg" alt="Instagram" />
                   </a>
                   <a
-                    href="https://www.youtube.com/channel/UCV8AcnJxF3dMqJ7GogF0Q-g"
+                    href="https://www.youtube.com/@tibetannationalsportsassoc8912"
                     target="_blank"
                     rel="noreferrer"
                     aria-label="YouTube"
@@ -146,7 +146,7 @@ export default function RootLayout({
                 <img src="/icons/instagram.svg" alt="Instagram" />
               </a>
               <a
-                href="https://www.youtube.com/channel/UCV8AcnJxF3dMqJ7GogF0Q-g"
+                href="https://www.youtube.com/@tibetannationalsportsassoc8912"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="YouTube"
