@@ -25,11 +25,11 @@ function blocksToStrings(blocks: SanityBlock[] | undefined): string[] {
     .filter(Boolean);
 }
 
-const SANITY_LIST_QUERY = `*[_type=="news"]|order(date desc){
+const SANITY_LIST_QUERY = `*[_type=="news"]|order(coalesce(date, _createdAt) desc){
   "id": slug.current,
   title,
   "image": coalesce(coverImage.asset->url, ""),
-  date,
+  "date": coalesce(date, _createdAt),
   author,
   content
 }`;
