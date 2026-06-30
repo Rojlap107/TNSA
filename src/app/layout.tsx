@@ -108,6 +108,30 @@ export default function RootLayout({
                   <li>
                     <a href="/national-team">NATIONAL TEAM</a>
                   </li>
+                  <li className="nav-dropdown">
+                    <span className="nav-link-label">FCRA INFO</span>
+                    <ul className="dropdown-menu">
+                      <li><a href="/fcra/registration">FCRA Registration</a></li>
+                      <li className="dropdown-submenu">
+                        <span className="nav-link-label">FCRA Annual Report</span>
+                        <ul className="dropdown-menu">
+                          <li><a href="/fcra/annual-report/2025-26">2025-26</a></li>
+                          <li><a href="/fcra/annual-report/2024-25">2024-25</a></li>
+                          <li><a href="/fcra/annual-report/2023-24">2023-24</a></li>
+                        </ul>
+                      </li>
+                      <li className="dropdown-submenu">
+                        <span className="nav-link-label">FCRA Quarterly Receipt</span>
+                        <ul className="dropdown-menu">
+                          <li><a href="/fcra/quarterly-receipt/2025-26">2025-26</a></li>
+                          <li><a href="/fcra/quarterly-receipt/2024-25">2024-25</a></li>
+                          <li><a href="/fcra/quarterly-receipt/2023-24">2023-24</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="/fcra/bank-detail">FCRA Bank Detail</a></li>
+                      <li><a href="/fcra/financial-reports">Financial Reports</a></li>
+                    </ul>
+                  </li>
                   <li>
                     <a href="/contact">CONTACT</a>
                   </li>

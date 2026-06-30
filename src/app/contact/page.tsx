@@ -24,9 +24,9 @@ export default function ContactPage() {
               Dharamsala Cantt 176215, District Kangra, H.P., India
             </p>
             <p style={{ marginBottom: 8 }}>
-              <strong>Phone</strong>: +91-1892 220240 / 221348
+              <strong>Director</strong>: +91 8351888737
               <br />
-              <strong>Fax</strong>: +91-1892 221670
+              <strong>Accountant</strong>: +91 7895659101
             </p>
             <p style={{ marginBottom: 0 }}>
               <strong>Email</strong>: info@tibetansports.org,

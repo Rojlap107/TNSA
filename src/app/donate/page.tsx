@@ -56,7 +56,7 @@ export default function DonatePage() {
           </div>
 
           <div className="about-section">
-            <h2>Bank Details (Foreign Donors)</h2>
+            <h2>Bank Details (Foreign Donors — FCRA)</h2>
             <div style={{ overflowX: "auto" }}>
               <table style={{ width: "100%", borderCollapse: "collapse" }}>
                 <tbody>
@@ -141,7 +141,11 @@ export default function DonatePage() {
             </div>
           </div>
 
-          
+          <div className="about-section" style={{ textAlign: "center" }}>
+            <a href="/contact" className="fcra-contact-btn">
+              CONTACT FOR FURTHER INFORMATION
+            </a>
+          </div>
         </div>
       </section>
     </main>
