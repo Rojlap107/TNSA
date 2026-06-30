@@ -1,18 +1,5 @@
 [
   {
-    "id": "fcra",
-    "title": "FCRA & Annual Reports",
-    "image": "/fcra-cover.jpg",
-    "content": [
-      "Find TNSA's FCRA compliance documents and annual reports.",
-      "These documents will be updated each year to maintain transparency."
-    ],
-    "documents": [
-      { "title": "FCRA Registration", "file": "/docs/fcra-registration.pdf" },
-      { "title": "Annual Report 2024-25", "file": "/docs/annual-report-2024-25.pdf" }
-    ]
-  },
-  {
     "id": "mens-camp",
     "title": "Men's Football Camp",
     "image": "/mens-football.jpg",
