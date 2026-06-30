@@ -29,8 +29,8 @@ export default function ContactPage() {
               <strong>Accountant</strong>: +91 7895659101
             </p>
             <p style={{ marginBottom: 0 }}>
-              <strong>Email</strong>: info@tibetansports.org,
-              tnsadhasa@gmail.com, office@tibetansports.org
+              <strong>Email</strong>: tnsadhasa@gmail.com,
+              office@tibetansports.org
             </p>
           </div>
         </div>

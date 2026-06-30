@@ -23,7 +23,7 @@ export default function MembershipPage() {
               <ul>
                 <li>
                   <strong>Eligibility</strong>: Open to all Tibetan community
-                  members (placeholder).
+                  members.
                 </li>
                 <li>
                   <strong>Annual Fee</strong>: To be confirmed.
@@ -45,8 +45,7 @@ export default function MembershipPage() {
               </p>
               <ul>
                 <li>
-                  <strong>Eligibility</strong>: Tibetan players of all ages
-                  (placeholder — specify category later).
+                  <strong>Eligibility</strong>: Tibetan players of all ages.
                 </li>
                 <li>
                   <strong>Registration Fee</strong>: To be confirmed.
