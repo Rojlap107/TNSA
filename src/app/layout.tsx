@@ -80,9 +80,13 @@ export default function RootLayout({
                 <ul className="nav-menu">
                   <li className="nav-dropdown">
                     <a href="/about">ABOUT</a>
-                    <ul className="dropdown-menu">
-                      <li><a href="/about">About TNSA</a></li>
-                      <li><a href="/about/chapter-members">Chapter Members</a></li>
+                    <ul className="dropdown-menu dropdown-menu-wide">
+                      <li><a href="/about/faqs">FAQs</a></li>
+                      <li><a href="/about/administration">Administration Staff</a></li>
+                      <li><a href="/about/board-members">Board Members</a></li>
+                      <li><a href="/about/executive-members">Executive Members</a></li>
+                      <li><a href="/about/international-chapter-members">TNSA International Chapter Members</a></li>
+                      <li><a href="/about/documents">Documents</a></li>
                     </ul>
                   </li>
                   <li>
@@ -100,6 +104,8 @@ export default function RootLayout({
                       <li><a href="/tournaments/conifa-asian-cup">CONIFA (Asian Cup)</a></li>
                       <li><a href="/tournaments/governors-gold-cup">Governor's Gold Cup</a></li>
                       <li><a href="/tournaments/unity-cup">Unity Cup</a></li>
+                      <li><a href="/tournaments/freedom-cup">Freedom Cup</a></li>
+                      <li><a href="/tournaments/independence-cup">Independence Cup</a></li>
                     </ul>
                   </li>
                   <li>
@@ -111,25 +117,17 @@ export default function RootLayout({
                   <li className="nav-dropdown">
                     <span className="nav-link-label">FCRA INFO</span>
                     <ul className="dropdown-menu">
-                      <li><a href="/fcra/registration">FCRA Registration</a></li>
+                      <li><a href="/fcra/Renewal-Certificate.pdf" target="_blank" rel="noopener noreferrer">FCRA Registration</a></li>
                       <li className="dropdown-submenu">
                         <span className="nav-link-label">FCRA Annual Report</span>
                         <ul className="dropdown-menu">
-                          <li><a href="/fcra/annual-report/2025-26">2025-26</a></li>
-                          <li><a href="/fcra/annual-report/2024-25">2024-25</a></li>
-                          <li><a href="/fcra/annual-report/2023-24">2023-24</a></li>
-                        </ul>
-                      </li>
-                      <li className="dropdown-submenu">
-                        <span className="nav-link-label">FCRA Quarterly Receipt</span>
-                        <ul className="dropdown-menu">
-                          <li><a href="/fcra/quarterly-receipt/2025-26">2025-26</a></li>
-                          <li><a href="/fcra/quarterly-receipt/2024-25">2024-25</a></li>
-                          <li><a href="/fcra/quarterly-receipt/2023-24">2023-24</a></li>
+                          <li><a href="/fcra/2025-26.pdf" target="_blank" rel="noopener noreferrer">2025-26</a></li>
+                          <li><a href="/fcra/2024-25.pdf" target="_blank" rel="noopener noreferrer">2024-25</a></li>
+                          <li><a href="/fcra/2023-24.pdf" target="_blank" rel="noopener noreferrer">2023-24</a></li>
+                          <li><a href="/fcra/2022-23.pdf" target="_blank" rel="noopener noreferrer">2022-23</a></li>
                         </ul>
                       </li>
                       <li><a href="/fcra/bank-detail">FCRA Bank Detail</a></li>
-                      <li><a href="/fcra/financial-reports">Financial Reports</a></li>
                     </ul>
                   </li>
                   <li>

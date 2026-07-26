@@ -47,9 +47,9 @@ export default function ProgramsPage() {
         <div className="container">
           <h2>Programs</h2>
           <p style={{ color: "#555", fontSize: 15, marginBottom: 24, textAlign: "center" }}>
-            TNSA is registered under the Foreign Contribution Regulation Act (FCRA). View our FCRA compliance{" "}
-            <a href="/fcra/registration" style={{ color: "#4A90E2", textDecoration: "underline" }}>
-              documents and annual reports
+            TNSA is registered under the Foreign Contribution Regulation Act (FCRA). View our FCRA{" "}
+            <a href="/fcra/Renewal-Certificate.pdf" target="_blank" rel="noopener noreferrer" style={{ color: "#4A90E2", textDecoration: "underline" }}>
+              registration certificate
             </a>.
           </p>
 

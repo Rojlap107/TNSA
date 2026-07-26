@@ -177,7 +177,7 @@ body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; }
 .section-category .category-subtitle { font-size: 15px; color: #777; margin-bottom: 24px; }
 .subsection-label { font-size: 16px; font-weight: 600; color: #4A90E2; margin: 24px 0 16px; text-transform: uppercase; letter-spacing: 0.5px; }
 
-@media (max-width: 768px) { .members-grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { .members-grid { grid-template-columns: 1fr; } .member-card img { height: auto; aspect-ratio: 3 / 4; } }
 
 /* Hamburger button (hidden on desktop) */
 .nav-toggle-input { display: none; position: absolute; }

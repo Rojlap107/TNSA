@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "International Chapter Members - Tibetan National Sports Association",
+  title: "TNSA International Chapter Members - Tibetan National Sports Association",
 };
 
 const members = [
@@ -29,7 +29,7 @@ const members = [
   },
 ];
 
-export default function ChapterMembersPage() {
+export default function InternationalChapterMembersPage() {
   return (
     <>
       <div className="about-hero">
