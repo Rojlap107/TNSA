@@ -35,6 +35,16 @@ body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; }
 .dropdown-submenu:hover > .dropdown-menu { display: block; }
 .fcra-contact-btn { display: inline-block; background: #2c3e50; color: #fff; text-decoration: none; padding: 12px 24px; font-size: 14px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; border-radius: 4px; transition: background 0.2s; }
 .fcra-contact-btn:hover { background: #1a252f; }
+.faq-list { display: flex; flex-direction: column; gap: 12px; }
+.faq-item { border: 1px solid #e5e7eb; border-radius: 8px; background: #fafbfc; overflow: hidden; transition: box-shadow 0.2s; }
+.faq-item[open] { box-shadow: 0 4px 12px rgba(0,0,0,0.06); background: #fff; }
+.faq-item summary { list-style: none; cursor: pointer; padding: 16px 20px; font-size: 16px; font-weight: 600; color: #333; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: '+'; font-size: 22px; font-weight: 400; color: #4A90E2; line-height: 1; transition: transform 0.2s; }
+.faq-item[open] summary::after { content: '\2013'; }
+.faq-item summary:hover { color: #4A90E2; }
+.faq-answer { padding: 0 20px 18px; font-size: 15px; line-height: 1.65; color: #555; }
+.faq-answer a { text-decoration: underline; }
 .membership-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
 .membership-card { display: flex; flex-direction: column; margin-bottom: 0; }
 .membership-card h2 { color: #4A90E2; }
