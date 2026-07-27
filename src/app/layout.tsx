@@ -93,23 +93,31 @@ export default function RootLayout({
                     <a href="/news">NEWS</a>
                   </li>
                   <li className="nav-dropdown">
-                    <span className="nav-link-label">TOURNAMENTS</span>
+                    <a href="/programs">PROGRAMS</a>
                     <ul className="dropdown-menu dropdown-menu-wide">
                       <li><a href="/tournaments/gcmgc">GCMGC</a></li>
-                      <li><a href="/tournaments/tongsten-cup">Tongsten Cup</a></li>
                       <li><a href="/tournaments/gcm-international">GCM International</a></li>
+                      <li><a href="/tournaments/tongsten-cup">Tongsten Cup</a></li>
                       <li><a href="/tournaments/chikdril">Chikdril Gold Cup</a></li>
-                      <li><a href="/tournaments/climate-cup">Climate Cup</a></li>
+                      <li><a href="/tournaments/freedom-cup">Freedom Cup</a></li>
+                      <li><a href="/programs/mens-camp">Men's Football Camp</a></li>
+                      <li><a href="/programs/womens-camp">Women's Football Camp</a></li>
+                      <li><a href="/programs/run-club">TNSA Run Club</a></li>
+                    </ul>
+                  </li>
+                  <li className="nav-dropdown">
+                    <a href="/participations">PARTICIPATIONS</a>
+                    <ul className="dropdown-menu dropdown-menu-wide">
                       <li><a href="/tournaments/conifa-world-cup">CONIFA (World Cup)</a></li>
                       <li><a href="/tournaments/conifa-asian-cup">CONIFA (Asian Cup)</a></li>
-                      <li><a href="/tournaments/governors-gold-cup">Governor's Gold Cup</a></li>
+                      <li><a href="/tournaments/climate-cup">Climate Cup</a></li>
                       <li><a href="/tournaments/unity-cup">Unity Cup</a></li>
-                      <li><a href="/tournaments/freedom-cup">Freedom Cup</a></li>
+                      <li><a href="/tournaments/governors-gold-cup">Governor's Gold Cup</a></li>
                       <li><a href="/tournaments/independence-cup">Independence Cup</a></li>
                     </ul>
                   </li>
                   <li>
-                    <a href="/programs">PROGRAMS</a>
+                    <a href="/gallery">GALLERY</a>
                   </li>
                   <li>
                     <a href="/national-team">NATIONAL TEAM</a>

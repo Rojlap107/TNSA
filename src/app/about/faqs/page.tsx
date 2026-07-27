@@ -88,8 +88,9 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
         </ul>
         <p style={{ marginTop: 12 }}>
           See our{" "}
-          <a href="/tournaments" style={{ color: "#4A90E2" }}>Tournaments</a>{" "}
-          page for details on each.
+          <a href="/programs" style={{ color: "#4A90E2" }}>Programs</a> and{" "}
+          <a href="/participations" style={{ color: "#4A90E2" }}>Participations</a>{" "}
+          pages for details on each.
         </p>
       </>
     ),
