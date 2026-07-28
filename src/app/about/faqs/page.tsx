@@ -157,10 +157,11 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
     q: "Is TNSA a registered non-profit?",
     a: (
       <>
-        Yes. TNSA is registered under the Foreign Contribution (Regulation)
-        Act (FCRA) of India, which permits it to receive foreign
-        contributions. TNSA publishes its annual financial reports and
-        registration certificate publicly under the{" "}
+        Yes. TNSA is registered under the Societies Registration Act
+        (XXI of 1860). It is also registered under the Foreign Contribution
+        (Regulation) Act (FCRA) of India, which permits it to receive
+        foreign contributions. TNSA publishes its annual financial reports
+        and registration certificate publicly under the{" "}
         <strong>FCRA Info</strong> menu in the header.
       </>
     ),
