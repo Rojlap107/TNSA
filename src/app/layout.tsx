@@ -1,7 +1,6 @@
 export const metadata = {
   title: "Tibetan National Sports Association",
   description: "Official TNSA website",
-  manifest: "/favicon/site.webmanifest",
   icons: {
     icon: [
       { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
